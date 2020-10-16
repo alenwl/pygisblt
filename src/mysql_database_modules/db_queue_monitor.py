@@ -1,10 +1,11 @@
 import pymysql
+import threading
 
 class db_queue_monitor():
 
     def check_connectivity(self):
+        # Attempt to open connection to dabatase
         try:
-            # Open database connection
             db = pymysql.connect("172.30.176.197","user","password","gisbltdb" )
             db.close()
         except:
@@ -18,3 +19,5 @@ class db_queue_monitor():
             # disconnect from server
             #db.close()
         return True
+
+    

@@ -1,6 +1,6 @@
 from flask import Flask
 import time
-from src.db_queue_monitor import *
+from src.mysql_database_modules.db_queue_monitor import *
 application = Flask(__name__)
 
 @application.route("/")
