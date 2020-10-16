@@ -1,7 +1,7 @@
 import pymysql
 
-class db-queue-monitor():
-    
+class db_queue_monitor():
+
     def check_connectivity():
         try:
             # Open database connection

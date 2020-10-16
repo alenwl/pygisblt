@@ -1,6 +1,6 @@
 from flask import Flask
 import time
-from pygisblt.src.db-queue-monitor import *
+from pygisblt.src.db_queue_monitor import *
 application = Flask(__name__)
 
 @application.route("/")
