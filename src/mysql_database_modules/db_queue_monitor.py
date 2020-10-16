@@ -3,6 +3,9 @@ import threading
 
 class db_queue_monitor():
 
+    def __init__(self):
+        pass
+
     def check_connectivity(self):
         # Attempt to open connection to dabatase
         try:

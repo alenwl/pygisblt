@@ -2,7 +2,7 @@ from flask import Flask
 import time
 from src.mysql_database_modules.db_queue_monitor import *
 application = Flask(__name__)
-import sys
+import pathlib
 
 @application.route("/")
 def hello():
@@ -13,7 +13,7 @@ def test_al():
     test = db_queue_monitor()
     if test.check_connectivity():
         #return("Successful connection to db")
-        return(sys.path)
+        return(str(pathlib.Path(__file__).parent.absolute()) + str(pathlib.Path().absolute()))
     else:
         return("Failed connecting to db")
 
