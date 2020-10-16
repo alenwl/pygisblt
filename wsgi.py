@@ -10,7 +10,7 @@ def hello():
 @application.route('/dbtest/')
 def test_al():
     test = db_queue_monitor()
-    if test.check_connectivity():x
+    if test.check_connectivity():
         return("Successful connection to db")
     else:
         return("Failed connecting to db")
