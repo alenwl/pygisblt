@@ -9,7 +9,7 @@ def hello():
 
 @application.route('/test/')
 def test_al():
-    test = db-queue-monitor()
+    test = db_queue_monitor()
     if test.check_connectivity():
         return("Success")
     else:
