@@ -2,7 +2,7 @@ import pymysql
 
 class db_queue_monitor():
 
-    def check_connectivity():
+    def check_connectivity(self):
         try:
             # Open database connection
             db = pymysql.connect("172.30.176.197","user","password","gisbltdb" )
