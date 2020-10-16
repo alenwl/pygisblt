@@ -37,13 +37,11 @@ class db_queue_monitor():
                     self.MYSQL_PASSWORD,
                     self.MYSQL_DATABASE )
             with db.cursor() as cursor:
-                sql = "SELECT * FROM %s ORDER BY %s DESC"
-                cursor.execute(sql, (tablename,desc_id))
+                sql = "SELECT * FROM %s ORDER BY %s DESC
+                cursor.execute("""SELECT * FROM %s ORDER BY %s DESC""", (tablename,desc_id,))
                 data = cursor.fetchall()
             db.close()
             return data
         except pymysql.Error as e:
-            print("Connection error %d: %s SQL: %s " %(e.args[0], e.args[1],sql))
+            print("Connection error %d: %s" %(e.args[0], e.args[1])
             return False
-            
-    
