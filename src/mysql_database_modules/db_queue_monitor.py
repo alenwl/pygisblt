@@ -21,9 +21,9 @@ class db_queue_monitor():
                     self.MYSQL_PASSWORD,
                     self.MYSQL_DATABASE )
             db.close()
-            except pymysql.Error as e:
-                print("Connection error %d: %s" %(e.args[0], e.args[1]))
-                return False
+        except pymysql.Error as e:
+            print("Connection error %d: %s" %(e.args[0], e.args[1]))
+            return False
         return True
 
     def get_historical(self):
