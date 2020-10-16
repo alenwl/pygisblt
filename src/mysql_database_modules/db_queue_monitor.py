@@ -28,8 +28,6 @@ class db_queue_monitor():
 
     def get_historical(self):
         # Attempt to open connection to dabatase
-        tablename = "historical"
-        desc_id = "id"
         data = []
         try:
             db = pymysql.connect(self.MYSQL_HOST,
@@ -37,8 +35,8 @@ class db_queue_monitor():
                     self.MYSQL_PASSWORD,
                     self.MYSQL_DATABASE )
             with db.cursor() as cursor:
-                sql = "SELECT * FROM %s ORDER BY %s DESC"
-                cursor.execute(sql,(tablename,desc_id))
+                sql = "SELECT * FROM historical ORDER BY id DESC"
+                cursor.execute(sql)
                 data = cursor.fetchall()
             db.close()
             return data
