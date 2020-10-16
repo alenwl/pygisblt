@@ -1,6 +1,6 @@
 {
     "MYSQL_USER": "user",
-    "MYSQL_PASSWORD": "passwpord",
+    "MYSQL_PASSWORD": "password",
     "MYSQL_ROOT_PASSWORD": "password",
     "MYSQL_DATABASE": "gisbltdb",
     "MYSQL_HOST": "172.30.176.197"

@@ -1,11 +1,8 @@
+# Required modules
 from flask import Flask
 import time
 from src.mysql_database_modules.db_queue_monitor import *
 application = Flask(__name__)
-
-#@application.route("/")
-#def hello():
-#    return "Hello World!"
 
 @application.route('/dbtest/')
 def dbtest():
