@@ -37,8 +37,8 @@ class db_queue_monitor():
                     self.MYSQL_PASSWORD,
                     self.MYSQL_DATABASE )
             with db.cursor() as cursor:
-                sql = "SELECT * FROM %s ORDER BY %s DESC"
-                cursor.execute(sql,(tablename,desc_id))
+                sql = "SELECT * FROM user WHERE id=%s"
+                cursor.execute(sql,(desc_id,))
                 data = cursor.fetchall()
             db.close()
             return data
