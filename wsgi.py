@@ -3,12 +3,12 @@ import time
 from src.mysql_database_modules.db_queue_monitor import *
 application = Flask(__name__)
 
-@application.route("/")
-def hello():
-    return "Hello World!"
+#@application.route("/")
+#def hello():
+#    return "Hello World!"
 
 @application.route('/dbtest/')
-def test_al():
+def dbtest():
     test = db_queue_monitor()
     if test.check_connectivity():
         return("Successful connection to db")
