@@ -17,9 +17,9 @@ def historical():
     test = db_queue_monitor()
     data = test.get_historical()
     if data:
-        return("Success")
+        return(data)
     else:
-        return("Fail")
+        return(data)
 
 if __name__ == "__main__":
     application.run()
