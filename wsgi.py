@@ -1,6 +1,6 @@
 from flask import Flask
 import time
-import src/db-queue-monitor
+import src.db-queue-monitor
 application = Flask(__name__)
 
 @application.route("/")
