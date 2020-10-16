@@ -8,7 +8,7 @@ class db_queue_monitor():
             db = pymysql.connect("172.30.176.197","user","password","gisbltdb" )
             db.close()
         except:
-            return false
+            return False
             # prepare a cursor object using cursor() method
             #cursor = db.cursor()
             # execute SQL query using execute() method.
@@ -17,4 +17,4 @@ class db_queue_monitor():
             #data = cursor.fetchone()
             # disconnect from server
             #db.close()
-        return true
+        return True
