@@ -29,7 +29,7 @@ class db_queue_monitor():
     def get_historical(self):
         # Attempt to open connection to dabatase
         tablename = "historical"
-        desc_id = "id"
+        desc_id = "1"
         data = []
         try:
             db = pymysql.connect(self.MYSQL_HOST,
