@@ -42,5 +42,5 @@ class db_queue_monitor():
             db.close()
             return data
         except pymysql.Error as e:
-            print("Connection error %d: %s" %(e.args[0], e.args[1])
+            print("Connection error %d: %s" %(e.args[0], e.args[1]))
             return False
