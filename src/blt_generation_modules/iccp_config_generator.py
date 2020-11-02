@@ -12,6 +12,7 @@ class iccp_config_generator():
         db_parameters = json.load(open('/opt/app-root/src/json/blt_parameters.json'))
         self.TEMPLATE_ICCP_CONFIG = db_parameters['TEMPLATE_ICCP_CONFIG']
 
+    @application.route('/download')
     def test(self):
         tree = ET.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
