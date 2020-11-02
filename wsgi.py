@@ -34,8 +34,9 @@ def historical():
 
 @application.route('/api')
 def apitest():
-    key = request.headers.get('key')
-    return(key)
+    key = request.headers.get('API-Key')
+    print(key)
+    return('They key is %s'%key)
 
 if __name__ == "__main__":
     application.run()
