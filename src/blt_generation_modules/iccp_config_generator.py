@@ -12,4 +12,4 @@ class iccp_config_generator():
     def test(self):
         tree = ET.parse('/opt/app-root/src/xml/ICCP_config_emppty.xml')
         root = tree.getroot()
-        return root.tag
+        return root[0][1]
