@@ -7,10 +7,12 @@ import xml.etree.ElementTree as ET
 class iccp_config_generator():
 
     def __init__(self):
-        pass
+        # Parameters stored in /opt/app-root/src/json/blt_parameters.json
+        db_parameters = json.load(open('/opt/app-root/src/json/blt_parameters.json'))
+        self.TEMPLATE_ICCP_CONFIG = db_parameters['TEMPLATE_ICCP_CONFIG']
 
     def test(self):
-        tree = ET.parse('/opt/app-root/src/xml/ICCP_config_empty.xml')
+        tree = ET.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
         print(root.findall("."))
         return(str(tree))
