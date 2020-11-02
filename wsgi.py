@@ -41,7 +41,7 @@ def apitest():
     if my_key==key:
         xml = ElementTree.Element("Person", Name="anderr")
         xml_str = ElementTree.tostring(xml,encoding="unicode")
-        return Response(xml,mimetype='text/xml')
+        return Response(xml_str,mimetype='text/xml')
     else:
         return "wrong key"
 
