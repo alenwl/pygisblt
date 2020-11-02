@@ -4,6 +4,7 @@ import time
 from src.mysql_database_modules.db_queue_monitor import *
 from src.blt_generation_modules.iccp_config_generator import *
 application = Flask(__name__)
+from flask import send_file
 
 @application.route('/dbtest/')
 def dbtest():
@@ -18,7 +19,7 @@ def iccptest():
     test = iccp_config_generator()
     data = test.test()
     if data:
-        return("Success")
+        return send_file(data,as_attachment=True)
     else:
         return("Failed starting iccp config module")
 
