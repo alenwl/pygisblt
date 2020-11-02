@@ -42,9 +42,8 @@ def apitest():
     key = request.headers.get('API-Key')
     if my_key==key:
         if request.args.get('type') == 'iccp':
-            xml = ElementTree.Element('Type', Name='iccp_config')
-            xml_str = ElementTree.tostring(xml,encoding='unicode')
-            return Response(xml_str,mimetype='text/xml')
+            iccp = iccp_config_generator()
+            return Response(iccp.generate(),mimetype='text/xml')
         elif request.args.get('type') == 'network_config':
             xml = ElementTree.Element('Type', Name='network_config')
             xml_str = ElementTree.tostring(xml,encoding='unicode')

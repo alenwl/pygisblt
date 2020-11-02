@@ -15,3 +15,9 @@ class iccp_config_generator():
         tree = ET.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
         return(str(root))
+
+    def generate(self):
+        xml_str = ElementTree.tostring(
+                ET.parse(self.TEMPLATE_ICCP_CONFIG),
+                encoding='unicode')
+        return xml_str
