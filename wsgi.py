@@ -6,6 +6,8 @@ from flask import send_file
 import time
 from src.mysql_database_modules.db_queue_monitor import *
 from src.blt_generation_modules.iccp_config_generator import *
+from src.blt_generation_modules.rcc_generator import *
+from src.blt_generation_modules.network_config_generator import *
 application = Flask(__name__)
 from xml.etree import ElementTree
 
@@ -45,13 +47,11 @@ def apitest():
             iccp = iccp_config_generator()
             return Response(iccp.generate(),mimetype='text/xml')
         elif request.args.get('type') == 'network_config':
-            xml = ElementTree.Element('Type', Name='network_config')
-            xml_str = ElementTree.tostring(xml,encoding='unicode')
-            return Response(xml_str,mimetype='text/xml')
+            nc = network_config_generator()
+            return Response(nc.generate(),mimetype='text/xml')
         elif request.args.get('type') == 'rcc':
-            xml = ElementTree.Element('Type', Name='rcc')
-            xml_str = ElementTree.tostring(xml,encoding='unicode')
-            return Response(xml_str,mimetype='text/xml')
+            rcc = rcc_generator()
+            return Response(rcc.generate(),mimetype='text/xml')
         else:
             return 'Invalid type'
     else:
