@@ -39,7 +39,7 @@ def apitest():
     my_key = "ander"
     key = request.headers.get('API-Key')
     if my_key==key:
-        xml = ElementTree.Element("Person", Name=:"anderr")
+        xml = ElementTree.Element("Person", Name:"anderr")
         xml_str = ElementTree.tostring(xml,encoding="unicode")
         return Response(xml,mymetype='text/xml')
     else:
