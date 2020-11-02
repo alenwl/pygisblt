@@ -19,5 +19,5 @@ class iccp_config_generator():
     def generate(self):
         tree = ElementTree.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
-        xml_str = ElementTree.tostring(root,encoding='unicode')
+        xml_str = ElementTree.tostring(root,encoding='utf-8')
         return xml_str
