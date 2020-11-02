@@ -1,5 +1,6 @@
 # Required modules
 from flask import Flask
+from flash import requests
 import time
 from src.mysql_database_modules.db_queue_monitor import *
 from src.blt_generation_modules.iccp_config_generator import *
@@ -30,6 +31,11 @@ def historical():
         return("Success")
     else:
         return("Fail")
+
+@application.route('/api')
+def apitest():
+    key = request.headers.get('key')
+    return(key)
 
 if __name__ == "__main__":
     application.run()
