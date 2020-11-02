@@ -3,7 +3,6 @@ import threading
 import json
 import xml.etree.ElementTree as ET
 from flask import send_file
-app = Flask(__name__)
 
 
 class iccp_config_generator():
