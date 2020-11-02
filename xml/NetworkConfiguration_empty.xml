@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STACK_CFG>
+  <LeanT_Profile_List>
+    <LeanT_Profile>
+      <Name>SNAP</Name>
+      <Session_Disconnect_Timeout>60</Session_Disconnect_Timeout>
+      <Tcp_Enable>Yes</Tcp_Enable>
+      <Tcp_Max_Tpdu_Len>65531</Tcp_Max_Tpdu_Len>
+      <Tcp_Max_Spdu_Outstanding>50</Tcp_Max_Spdu_Outstanding>
+      <Tcp_Listen_Port>102</Tcp_Listen_Port>
+      <Tcp_Max_Idle_Time>0</Tcp_Max_Idle_Time>
+      <Gensock_Wakeup_Port_Base>55050</Gensock_Wakeup_Port_Base>
+      <Gensock_Wakeup_Port_Range>90</Gensock_Wakeup_Port_Range>
+      <Tp4_Enable>No</Tp4_Enable>
+    </LeanT_Profile>
+    <LeanT_Profile>
+      <Name>Application</Name>
+      <Session_Disconnect_Timeout>60</Session_Disconnect_Timeout>
+      <Tcp_Enable>Yes</Tcp_Enable>
+      <Tcp_Max_Tpdu_Len>65531</Tcp_Max_Tpdu_Len>
+      <Tcp_Max_Spdu_Outstanding>50</Tcp_Max_Spdu_Outstanding>
+      <Tcp_Listen_Port>102</Tcp_Listen_Port>
+      <Tcp_Max_Idle_Time>0</Tcp_Max_Idle_Time>
+      <Gensock_Wakeup_Port_Base>55050</Gensock_Wakeup_Port_Base>
+      <Gensock_Wakeup_Port_Range>90</Gensock_Wakeup_Port_Range>
+      <Tp4_Enable>No</Tp4_Enable>
+    </LeanT_Profile>
+  </LeanT_Profile_List>
+  <Cert_Parameters>
+    <Cert_Expiration_Alarm_Limit>1440</Cert_Expiration_Alarm_Limit>
+    <Cert_Expiration_Eval_Interval>24</Cert_Expiration_Eval_Interval>
+    <CRL_Check_Time>720</CRL_Check_Time>
+    <CRL_Drop_Existing_Connections>No</CRL_Drop_Existing_Connections>
+  </Cert_Parameters>
+  <Trusted_CA_Cert_List>
+  </Trusted_CA_Cert_List>
+  <Certificate_List>
+  </Certificate_List>
+  <App_SNAP>
+    <Local_SSL_Certificate_List>
+    </Local_SSL_Certificate_List>
+    <SSL_Called_Port>3782</SSL_Called_Port>
+    <SSL_Calling_Port>3782</SSL_Calling_Port>
+    <SSL_Called_Peer_Cert_Known>Yes</SSL_Called_Peer_Cert_Known>
+    <SSL_Calling_Peer_Cert_Known>Yes</SSL_Calling_Peer_Cert_Known>
+    <Max_Tran_Per_Key>5000</Max_Tran_Per_Key>
+    <Max_Time_Per_Key>1800</Max_Time_Per_Key>
+    <Rekey_Timeout>60</Rekey_Timeout>
+    <Cipher_List>
+      <Cipher Enable="Yes" KeyEx="RSA" Crypt="AES_256_CBC" Hash="SHA" />
+      <Cipher Enable="Yes" KeyEx="RSA" Crypt="AES_128_CBC" Hash="SHA" />
+      <Cipher Enable="Yes" KeyEx="RSA" Crypt="RC4_128" Hash="SHA" />
+    </Cipher_List>
+    <SSL_Max_Called>128</SSL_Max_Called>
+    <SSL_Max_Calling>128</SSL_Max_Calling>
+    <SSL_Proxy_Called_Port>10042</SSL_Proxy_Called_Port>
+    <SSL_Proxy_Calling_Port>10043</SSL_Proxy_Calling_Port>
+    <SSL_Connect_Timeout>10000</SSL_Connect_Timeout>
+    <Max_Users>64</Max_Users>
+    <Max_Binds_Per_User>64</Max_Binds_Per_User>
+    <IPC_Port>10044</IPC_Port>
+    <IPC_Timeout>1000</IPC_Timeout>
+  </App_SNAP>
+  <AR_Name_List>
+    <AR_Name>
+      <Name>ADMS_AR</Name>
+      <AP_Title>1 3 9999 1</AP_Title>
+      <AE_Qualifier>1</AE_Qualifier>
+      <PSEL>00 00 00 01</PSEL>
+      <SSEL>00 01</SSEL>
+      <TSEL>00 01</TSEL>
+      <IP_Address>10.230.19.110</IP_Address>
+      <Tcp_Port>102</Tcp_Port>
+      <Authentication_Mode>AE Title</Authentication_Mode>
+      <Authentication_Certificate_List>
+      </Authentication_Certificate_List>
+      <Encryption>None</Encryption>
+    </AR_Name>
+    <AR_Name>
+      <Name>AR1</Name>
+      <AP_Title>1 3 9999 2</AP_Title>
+      <AE_Qualifier>1</AE_Qualifier>
+      <PSEL>00 00 00 02</PSEL>
+      <SSEL>00 01</SSEL>
+      <TSEL>00 01</TSEL>
+      <IP_Address>10.220.0.3</IP_Address>
+      <Tcp_Port>102</Tcp_Port>
+      <Authentication_Mode>AE Title</Authentication_Mode>
+      <Authentication_Certificate_List>
+      </Authentication_Certificate_List>
+      <Encryption>None</Encryption>
+    </AR_Name>
+  </AR_Name_List>
+  <AR_Matching_Profile_List>
+    <AR_Matching_Profile>
+      <Name>Application</Name>
+      <Allow_Missing_AE>No</Allow_Missing_AE>
+      <Allow_Extra_AE>Yes</Allow_Extra_AE>
+      <Match_AP_Title>Yes</Match_AP_Title>
+      <Match_AE_Qualifier>Yes</Match_AE_Qualifier>
+      <Match_AP_Invoke>No</Match_AP_Invoke>
+      <Match_AE_Invoke>No</Match_AE_Invoke>
+      <Match_PSEL>Yes</Match_PSEL>
+      <Match_TSEL>Yes</Match_TSEL>
+      <Match_SSEL>Yes</Match_SSEL>
+      <Match_IP_Address>No</Match_IP_Address>
+      <Host_Name_Support>No</Host_Name_Support>
+    </AR_Matching_Profile>
+  </AR_Matching_Profile_List>
+  <Security_Profile_List>
+    <Security_Profile>
+      <Name>Application</Name>
+      <Secure>No</Secure>
+    </Security_Profile>
+  </Security_Profile_List>
+  <App_Network_List>
+    <App_Network>
+      <App_Name>SNAP-Lite</App_Name>
+      <LeanT_Profile>SNAP</LeanT_Profile>
+      <Security_Profile>Application</Security_Profile>
+    </App_Network>
+    <App_Network>
+      <App_Name>LCC</App_Name>
+      <LeanT_Profile>Application</LeanT_Profile>
+      <Security_Profile>Application</Security_Profile>
+      <AR_Matching_Profile>Application</AR_Matching_Profile>
+      <App_AR_Name Role="Local">ADMS_AR</App_AR_Name>
+      <App_AR_Name Role="Remote">AR1</App_AR_Name>
+      <Max_Mms_Pdu_Length>32000</Max_Mms_Pdu_Length>
+      <Max_Calling_Connections>10</Max_Calling_Connections>
+      <Max_Called_Connections>10</Max_Called_Connections>
+    </App_Network>
+    <App_Network>
+      <App_Name>RCC</App_Name>
+      <LeanT_Profile>Application</LeanT_Profile>
+      <Security_Profile>Application</Security_Profile>
+      <AR_Matching_Profile>Application</AR_Matching_Profile>
+      <App_AR_Name Role="Local">AR1</App_AR_Name>
+      <App_AR_Name Role="Remote">ADMS_AR</App_AR_Name>
+      <Max_Mms_Pdu_Length>32000</Max_Mms_Pdu_Length>
+      <Max_Calling_Connections>10</Max_Calling_Connections>
+      <Max_Called_Connections>10</Max_Called_Connections>
+    </App_Network>
+  </App_Network_List>
+</STACK_CFG>

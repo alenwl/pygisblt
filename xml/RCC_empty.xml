@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalControlCenter>
+  <Name>RCC</Name>
+  <MaxDsTs>6000</MaxDsTs>
+  <MaxDataSets>6000</MaxDataSets>
+  <MaxMmsMsgSize>32000</MaxMmsMsgSize>
+  <LocalObjects>
+    <LocalDataValues Count="0">
+    </LocalDataValues>
+    <LocalDevices Count="0">
+    </LocalDevices>
+    <LocalInfoMsgs Count="0">
+    </LocalInfoMsgs>
+  </LocalObjects>
+  <RemoteControlCenters Count="1">
+    <RemoteControlCenter>
+      <Name>LCC</Name>
+      <Version>2000-08</Version>
+      <BilateralTable>
+        <Name>BLT2</Name>
+        <Id>BLT1_1</Id>
+        <LocalDomain>remoteDomain</LocalDomain>
+        <RemoteDomain>local</RemoteDomain>
+        <ShortestInterval>2</ShortestInterval>
+        <Blocks>1,2,4,5</Blocks>
+      </BilateralTable>
+      <Associations Count="1">
+        <Association>
+          <Name>ADMS</Name>
+          <LocalAr>AR1</LocalAr>
+          <RemoteAr>ADMS_AR</RemoteAr>
+          <ConnectRole>Calling</ConnectRole>
+          <AssocRetryTime>10</AssocRetryTime>
+          <InitiateTimeout>30</InitiateTimeout>
+          <ConcludeTimeout>30</ConcludeTimeout>
+          <AssocHeartbeatTime>0</AssocHeartbeatTime>
+          <ServiceRole>Client</ServiceRole>
+          <ServiceRole>Server</ServiceRole>
+          <MaxMmsMsgSize>32000</MaxMmsMsgSize>
+          <MaxReqPend>5</MaxReqPend>
+          <MaxIndPend>5</MaxIndPend>
+          <MaxNest>5</MaxNest>
+        </Association>
+      </Associations>
+      <ServerObjects>
+        <NumVccDv>0</NumVccDv>
+        <NumIccDv>0</NumIccDv>
+        <NumVccDev>0</NumVccDev>
+        <NumIccDev>0</NumIccDev>
+        <NumVccInfoMsg>0</NumVccInfoMsg>
+        <NumIccInfoMsg>0</NumIccInfoMsg>
+        <NumVccDs>0</NumVccDs>
+        <NumIccDs>0</NumIccDs>
+        <ServerDataValues Count="0">
+        </ServerDataValues>
+        <ServerDevices Count="0">
+        </ServerDevices>
+        <ServerInfoMsgs Count="0">
+        </ServerInfoMsgs>
+        <ServerDataSets Count="0">
+        </ServerDataSets>
+      </ServerObjects>
+      <ClientObjects>
+        <NumVccDv>0</NumVccDv>
+        <NumIccDv>0</NumIccDv>
+        <NumVccDev>0</NumVccDev>
+        <NumIccDev>0</NumIccDev>
+        <NumVccInfoMsg>0</NumVccInfoMsg>
+        <NumIccInfoMsg>0</NumIccInfoMsg>
+        <NumDs>0</NumDs>
+        <NumDsTs>0</NumDsTs>
+        <ClientDataValues Count="0">
+        </ClientDataValues>
+        <ClientDevices Count="0">
+        </ClientDevices>
+        <ClientInfoMsgs Count="0">
+        </ClientInfoMsgs>
+        <ClientDataSets Count="0">
+        </ClientDataSets>
+        <ClientDataSetTransferSets Count="0">
+        </ClientDataSetTransferSets>
+        <ClientAutoDsts Enable="Y">
+          <AssocName>ADMS</AssocName>
+          <AssignByType>Y</AssignByType>
+          <AutoParam Enable="Y" Type="Real">
+            <AutoDs>
+              <MaxDstsPduSize>32000</MaxDstsPduSize>
+              <MaxDvPerDs>500</MaxDvPerDs>
+              <Conservative>N</Conservative>
+              <Transfer_Set_Name>Y</Transfer_Set_Name>
+              <Transfer_Set_Time_Stamp>N</Transfer_Set_Time_Stamp>
+              <DSConditions_Detected>N</DSConditions_Detected>
+              <Event_Code_Detected>N</Event_Code_Detected>
+            </AutoDs>
+            <AutoDsts>
+              <StartTime>0</StartTime>
+              <Rbe>N</Rbe>
+              <AllChangesReported>N</AllChangesReported>
+              <Critical>N</Critical>
+              <BlockData>N</BlockData>
+              <DsCondInterval>Y</DsCondInterval>
+              <DsCondIntegrity>N</DsCondIntegrity>
+              <DsCondChange>N</DsCondChange>
+              <DsCondOperator>N</DsCondOperator>
+              <DsCondExternal>N</DsCondExternal>
+              <Interval>30</Interval>
+              <Integrity>0</Integrity>
+              <BufferTime>0</BufferTime>
+              <Tle>60</Tle>
+            </AutoDsts>
+          </AutoParam>
+          <AutoParam Enable="Y" Type="Discrete">
+            <AutoDs>
+              <MaxDstsPduSize>32000</MaxDstsPduSize>
+              <MaxDvPerDs>500</MaxDvPerDs>
+              <Conservative>N</Conservative>
+              <Transfer_Set_Name>Y</Transfer_Set_Name>
+              <Transfer_Set_Time_Stamp>N</Transfer_Set_Time_Stamp>
+              <DSConditions_Detected>N</DSConditions_Detected>
+              <Event_Code_Detected>N</Event_Code_Detected>
+            </AutoDs>
+            <AutoDsts>
+              <StartTime>0</StartTime>
+              <Rbe>N</Rbe>
+              <AllChangesReported>N</AllChangesReported>
+              <Critical>N</Critical>
+              <BlockData>N</BlockData>
+              <DsCondInterval>Y</DsCondInterval>
+              <DsCondIntegrity>N</DsCondIntegrity>
+              <DsCondChange>N</DsCondChange>
+              <DsCondOperator>N</DsCondOperator>
+              <DsCondExternal>N</DsCondExternal>
+              <Interval>30</Interval>
+              <Integrity>0</Integrity>
+              <BufferTime>0</BufferTime>
+              <Tle>60</Tle>
+            </AutoDsts>
+          </AutoParam>
+          <AutoParam Enable="Y" Type="State">
+            <AutoDs>
+              <MaxDstsPduSize>32000</MaxDstsPduSize>
+              <MaxDvPerDs>500</MaxDvPerDs>
+              <Conservative>N</Conservative>
+              <Transfer_Set_Name>Y</Transfer_Set_Name>
+              <Transfer_Set_Time_Stamp>N</Transfer_Set_Time_Stamp>
+              <DSConditions_Detected>N</DSConditions_Detected>
+              <Event_Code_Detected>N</Event_Code_Detected>
+            </AutoDs>
+            <AutoDsts>
+              <StartTime>0</StartTime>
+              <Rbe>Y</Rbe>
+              <AllChangesReported>N</AllChangesReported>
+              <Critical>N</Critical>
+              <BlockData>N</BlockData>
+              <DsCondInterval>N</DsCondInterval>
+              <DsCondIntegrity>Y</DsCondIntegrity>
+              <DsCondChange>Y</DsCondChange>
+              <DsCondOperator>N</DsCondOperator>
+              <DsCondExternal>N</DsCondExternal>
+              <Interval>0</Interval>
+              <Integrity>900</Integrity>
+              <BufferTime>2</BufferTime>
+              <Tle>60</Tle>
+            </AutoDsts>
+          </AutoParam>
+        </ClientAutoDsts>
+      </ClientObjects>
+    </RemoteControlCenter>
+  </RemoteControlCenters>
+</LocalControlCenter>
