@@ -13,38 +13,48 @@ from xml.etree import ElementTree
 def dbtest():
     test = db_queue_monitor()
     if test.check_connectivity():
-        return("Successful connection to db")
+        return('Successful connection to db')
     else:
-        return("Failed connecting to db")
+        return('Failed connecting to db')
 
 @application.route('/iccptest/')
 def iccptest():
     test = iccp_config_generator()
     data = test.test()
     if data:
-        return("Success")
+        return('Success')
     else:
-        return("Failed starting iccp config module")
+        return('Failed starting iccp config module')
 
 @application.route('/historical/')
 def historical():
     test = db_queue_monitor()
     data = test.get_historical()
     if data:
-        return("Success")
+        return('Success')
     else:
-        return("Fail")
+        return('Fail')
 
 @application.route('/api')
 def apitest():
-    my_key = "ander"
+    # Temporary 
+    my_key = 'ander'
     key = request.headers.get('API-Key')
     if my_key==key:
-        xml = ElementTree.Element("Person", Name="anderr")
-        xml_str = ElementTree.tostring(xml,encoding="unicode")
-        return Response(xml_str,mimetype='text/xml')
+        if request.args.get('type') == 'iccp':
+            xml = ElementTree.Element('Type', Name='iccp_config')
+            xml_str = ElementTree.tostring(xml,encoding='unicode')
+            return Response(xml_str,mimetype='text/xml')
+        else if request.args.get('type') == 'network_config':
+            xml = ElementTree.Element('Type', Name='network_config')
+            xml_str = ElementTree.tostring(xml,encoding='unicode')
+            return Response(xml_str,mimetype='text/xml')
+        else if request.args.get('type') == 'rcc':
+            xml = ElementTree.Element('Type', Name='rcc')
+            xml_str = ElementTree.tostring(xml,encoding='unicode')
+            return Response(xml_str,mimetype='text/xml')
     else:
-        return "wrong key"
+        return 'wrong key'
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     application.run()
