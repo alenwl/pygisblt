@@ -14,5 +14,4 @@ class iccp_config_generator():
     def test(self):
         tree = ET.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
-        print(root.findall("."))
-        return(str(tree))
+        return(root)

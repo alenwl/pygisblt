@@ -13,21 +13,21 @@ def dbtest():
     else:
         return("Failed connecting to db")
 
+@application.route('/iccptest')
+def iccp_config():
+    test = iccp_config_generator()
+    data = test.test()
+    if data:
+        return(data)
+    else:
+        return("Failed starting iccp config module")
+
 @application.route('/historical/')
 def historical():
     test = db_queue_monitor()
     data = test.get_historical()
     if data:
         return("Success")
-    else:
-        return("Fail")
-
-@application.route('/iccp_config/')
-def iccp_config():
-    test = iccp_config_generator()
-    data = test.test()
-    if data:
-        return(data)
     else:
         return("Fail")
 
