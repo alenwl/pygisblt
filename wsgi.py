@@ -1,6 +1,6 @@
 # Required modules
 from flask import Flask
-from flask import requests
+from flask import request
 import time
 from src.mysql_database_modules.db_queue_monitor import *
 from src.blt_generation_modules.iccp_config_generator import *
