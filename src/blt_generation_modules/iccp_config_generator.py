@@ -2,6 +2,8 @@ import pymysql
 import threading
 import json
 import xml.etree.ElementTree as ET
+from flask import send_file
+app = Flask(__name__)
 
 
 class iccp_config_generator():
@@ -14,4 +16,4 @@ class iccp_config_generator():
     def test(self):
         tree = ET.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
-        return(str(root))
+        return send_file(self.TEMPLATE_ICCP_CONFIG,as_attachment=True)

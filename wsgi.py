@@ -18,7 +18,7 @@ def iccptest():
     test = iccp_config_generator()
     data = test.test()
     if data:
-        return(data)
+        return("Success")
     else:
         return("Failed starting iccp config module")
 
