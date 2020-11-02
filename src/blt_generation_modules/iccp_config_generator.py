@@ -1,7 +1,7 @@
 import pymysql
 import threading
 import json
-import xml.etree.ElementTree as ET
+from xml.etree import ElementTree
 
 
 class iccp_config_generator():
@@ -17,7 +17,7 @@ class iccp_config_generator():
         return(str(root))
 
     def generate(self):
-        xml_str = ET.tostring(
-                ET.parse(self.TEMPLATE_ICCP_CONFIG),
-                encoding='unicode')
+        tree = ElementTree.parse(self.TEMPLATE_ICCP_CONFIG)
+        root = tree.getroot()
+        xml_str = ElementTree.tostring(root,encoding='unicode')
         return xml_str
