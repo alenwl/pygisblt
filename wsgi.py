@@ -2,6 +2,7 @@
 from flask import Flask
 import time
 from src.mysql_database_modules.db_queue_monitor import *
+from src.blt_generation_modules.iccp_config_generator import *
 application = Flask(__name__)
 
 @application.route('/dbtest/')
@@ -18,6 +19,15 @@ def historical():
     data = test.get_historical()
     if data:
         return("Success")
+    else:
+        return("Fail")
+
+@application.route('/iccp_config/')
+def iccp_config():
+    test = iccp_config_generator()
+    data = test.test()
+    if data:
+        return(data)
     else:
         return("Fail")
 
