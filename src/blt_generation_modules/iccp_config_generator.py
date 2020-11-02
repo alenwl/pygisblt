@@ -10,7 +10,6 @@ class iccp_config_generator():
         pass
 
     def test(self):
-        return "All ok with this module"
         tree = ET.parse('/opt/app-root/src/xml/ICCP_config_emppty.xml')
         root = tree.getroot()
         return root.tag
