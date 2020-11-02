@@ -45,16 +45,18 @@ def apitest():
             xml = ElementTree.Element('Type', Name='iccp_config')
             xml_str = ElementTree.tostring(xml,encoding='unicode')
             return Response(xml_str,mimetype='text/xml')
-        else if request.args.get('type') == 'network_config':
+        elif request.args.get('type') == 'network_config':
             xml = ElementTree.Element('Type', Name='network_config')
             xml_str = ElementTree.tostring(xml,encoding='unicode')
             return Response(xml_str,mimetype='text/xml')
-        else if request.args.get('type') == 'rcc':
+        elif request.args.get('type') == 'rcc':
             xml = ElementTree.Element('Type', Name='rcc')
             xml_str = ElementTree.tostring(xml,encoding='unicode')
             return Response(xml_str,mimetype='text/xml')
+        else:
+            return 'Invalid type'
     else:
-        return 'wrong key'
+        return 'Invalid key'
 
 if __name__ == '__main__':
     application.run()
