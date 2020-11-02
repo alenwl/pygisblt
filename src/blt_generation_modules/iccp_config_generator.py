@@ -12,5 +12,5 @@ class iccp_config_generator():
     def test(self):
         tree = ET.parse('/opt/app-root/src/xml/ICCP_config_empty.xml')
         root = tree.getroot()
-        print(root)
-        return(str(root.tag))
+        print(tree)
+        return(str(tree))
