@@ -13,8 +13,8 @@ def dbtest():
     else:
         return("Failed connecting to db")
 
-@application.route('/iccptest')
-def iccp_config():
+@application.route('/iccptest/')
+def iccptest():
     test = iccp_config_generator()
     data = test.test()
     if data:
