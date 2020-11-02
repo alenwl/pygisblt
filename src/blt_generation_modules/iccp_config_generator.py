@@ -12,7 +12,7 @@ class iccp_config_generator():
         self.TEMPLATE_ICCP_CONFIG = db_parameters['TEMPLATE_ICCP_CONFIG']
 
     def test(self):
-        tree = ET.parse(self.TEMPLATE_ICCP_CONFIG)
+        tree = ElementTree.parse(self.TEMPLATE_ICCP_CONFIG)
         root = tree.getroot()
         return(str(root))
 
