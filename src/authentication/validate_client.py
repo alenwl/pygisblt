@@ -1,4 +1,4 @@
-
+from hashlib import sha256
 
 class validate_client():
 
@@ -9,4 +9,8 @@ class validate_client():
         if not key or not clid:
             return False
         else:
-            return True
+            if (sha256(key.encode('utf-8')).hexdigest() 
+                    == 'badc551bb4285e28227b7361e6056b2ed119f23fb1c225a070805c160d7e234e'):
+                return True
+            else:
+                return False

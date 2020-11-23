@@ -43,6 +43,7 @@ def apitest():
     # Validate key and client_id
     validate = validate_client()
     if validate.check_client(request.headers.get('API-Key'),request.headers.get('client_id')):
+        # If succesfull authentication check parameter 'type'
         if request.args.get('type') == 'iccp':
             iccp = iccp_config_generator()
             return Response(iccp.generate(),mimetype='text/xml')
