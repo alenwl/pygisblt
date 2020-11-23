@@ -1,14 +1,14 @@
 import pymysql
 import json
+import os
 from xml.etree import ElementTree
 
 
 class rcc_generator():
 
     def __init__(self):
-        # Parameters stored in /opt/app-root/src/json/blt_parameters.json
-        db_parameters = json.load(open('/opt/app-root/src/json/blt_parameters.json'))
-        self.TEMPLATE_RCC = db_parameters['TEMPLATE_RCC']
+        # Config map defines these parameters as env
+        self.TEMPLATE_RCC = os.environ.get('TEMPLATE_RCC')
 
     def test(self):
         tree = ElementTree.parse(self.TEMPLATE_RCC)
