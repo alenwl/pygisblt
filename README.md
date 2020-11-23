@@ -9,3 +9,12 @@ minishift start
 once started deploy last version from github
 
 oc start-build pygisblt -n gis-blt-gen
+
+# Note
+Error from server (Forbidden): services is forbidden: User "developer" cannot list services in the namespace "myproject": no RBAC policy matched
+
+this is fixed with 
+oc adm policy add-cluster-role-to-user edit developer --as system:admin
+
+# To switch project
+oc project gis-blt-gen

@@ -1,16 +1,21 @@
 import pymysql
 import threading
 import json
+import os
 
 class db_queue_monitor():
 
     def __init__(self):
         # Parameters stored in /opt/app-root/src/json/db_access_parameters.json
         db_parameters = json.load(open('/opt/app-root/src/json/db_access_parameters.json'))
-        self.MYSQL_USER = db_parameters['MYSQL_USER']
-        self.MYSQL_HOST = db_parameters['MYSQL_HOST']
-        self.MYSQL_PASSWORD = db_parameters['MYSQL_PASSWORD']
-        self.MYSQL_DATABASE = db_parameters['MYSQL_DATABASE']
+        #self.MYSQL_USER = db_parameters['MYSQL_USER']
+        #self.MYSQL_HOST = db_parameters['MYSQL_HOST']
+        #self.MYSQL_PASSWORD = db_parameters['MYSQL_PASSWORD']
+        #self.MYSQL_DATABASE = db_parameters['MYSQL_DATABASE']
+        self.MYSQL_USER = os.getenv('MYSQL_USER')
+        self.MYSQL_HOST = os.getenv('MYSQL_HOST')
+        self.MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
+        self.MYSQL_DATABASE = os.getenv('MYSQL_DATABASE')
 
     def check_connectivity(self):
         # Attempt to open connection to dabatase
