@@ -8,6 +8,7 @@ from src.mysql_database_modules.db_queue_monitor import *
 from src.blt_generation_modules.iccp_config_generator import *
 from src.blt_generation_modules.rcc_generator import *
 from src.blt_generation_modules.network_config_generator import *
+from src.authentication.validate_client import *
 application = Flask(__name__)
 from xml.etree import ElementTree
 
@@ -39,10 +40,9 @@ def historical():
 
 @application.route('/api')
 def apitest():
-    # Temporary 
-    my_key = 'ander'
-    key = request.headers.get('API-Key')
-    if my_key==key:
+    # Validate key and client_id
+    validate = validate_client()
+    if validate.check_client(request.headers.get('API-Key'),request.headers.get('client_id')):
         if request.args.get('type') == 'iccp':
             iccp = iccp_config_generator()
             return Response(iccp.generate(),mimetype='text/xml')
@@ -55,7 +55,7 @@ def apitest():
         else:
             return 'Invalid type'
     else:
-        return 'Invalid key'
+        return 'Invalid key/client_id'
 
 if __name__ == '__main__':
     application.run()
