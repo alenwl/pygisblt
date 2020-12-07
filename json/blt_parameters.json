@@ -1,5 +1,0 @@
-{
-    "TEMPLATE_ICCP_CONFIG": "/opt/app-root/src/xml/ICCP_config_empty.xml",
-    "TEMPLATE_NETWORK_CONFIG" : "/opt/app-root/src/xml/NetworkConfiguration_empty.xml",
-    "TEMPLATE_RCC" : "/opt/app-root/src/xml/RCC_empty.xml"
-  }
