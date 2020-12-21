@@ -1,7 +1,7 @@
 from hashlib import sha256
 from src.mysql_database_modules.validate_user import *
 
-class validate():
+class validate_client():
 
     def __init__(self):
         pass
