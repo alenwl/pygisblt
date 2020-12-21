@@ -22,7 +22,7 @@ class validate_user():
                     self.MYSQL_DATABASE )
             with db.cursor() as cursor:
                 sql = ("SELECT password FROM credentials WHERE client=\""
-                        + client + "\")
+                        + client + "\"")
                 print(sql)
                 cursor.execute(sql)
                 data = cursor.fetchall()
