@@ -25,7 +25,7 @@ class validate_user():
                         + client + "\"")
                 cursor.execute(sql)
                 data = cursor.fetchall()
-            print(data[0])
+            print(data[0][0])
             db.close()
             return data
         except pymysql.Error as e:
