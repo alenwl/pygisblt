@@ -23,10 +23,9 @@ class validate_user():
             with db.cursor() as cursor:
                 sql = ("SELECT password FROM credentials WHERE client=\""
                         + client + "\"")
-                print(sql)
                 cursor.execute(sql)
                 data = cursor.fetchall()
-            print(data)
+            print(data[0])
             db.close()
             return data
         except pymysql.Error as e:
