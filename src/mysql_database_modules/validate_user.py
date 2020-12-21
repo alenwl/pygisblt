@@ -25,9 +25,11 @@ class validate_user():
                         + client + "\"")
                 cursor.execute(sql)
                 data = cursor.fetchall()
-            print(data[0][0])
             db.close()
-            return data
+            if not data[0][0]:
+                return False
+            else:
+                return data[0][0]
         except pymysql.Error as e:
             print("Connection error %d: %s" %(e.args[0], e.args[1]))
             return False
