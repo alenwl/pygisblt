@@ -1,6 +1,7 @@
 from hashlib import sha256
+from src.mysql_database_modules.validate_user import *
 
-class validate_client():
+class validate():
 
     def __init__(self):
         pass
@@ -11,8 +12,9 @@ class validate_client():
         else:
             # Hash api-key on request header and compare
             # with hash stored for client-id in credentials table
+            get_client = validate_user()
             if (sha256(key.encode('utf-8')).hexdigest() 
-                    == 'badc551bb4285e28227b7361e6056b2ed119f23fb1c225a070805c160d7e234e'):
+                    == get_client.validate(clid)):
                 return True
             else:
                 return False
