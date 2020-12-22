@@ -29,15 +29,6 @@ def iccptest():
     else:
         return('Failed starting iccp config module')
 
-@application.route('/historical/')
-def historical():
-    test = db_queue_monitor()
-    data = test.get_historical()
-    if data:
-        return('Success')
-    else:
-        return('Fail')
-
 @application.route('/api')
 def apitest():
     # Validate key and client_id
