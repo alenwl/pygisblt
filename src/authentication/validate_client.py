@@ -7,6 +7,7 @@ class validate_client():
         pass
 
     def check_client(self,key,clid):
+        # If not key or client id exit
         if not key or not clid:
             return False
         else:
