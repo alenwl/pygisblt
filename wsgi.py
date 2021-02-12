@@ -22,12 +22,20 @@ def dbtest():
 
 @application.route('/iccptest/')
 def iccptest():
-    test = iccp_config_generator()
-    data = test.test()
-    if data:
-        return('Success')
-    else:
-        return('Failed starting iccp config module')
+    try:
+        test = iccp_config_generator()
+        data = test.test()
+        if data:
+            return('Success')
+        else:
+            return('Failed starting iccp config module')
+    except IOError as (errno, strerror):
+        print "I/O error({0}): {1}".format(errno, strerror)
+    except ValueError:
+        print "Could not convert data to an integer."
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
+        raise
 
 @application.route('/api')
 def apitest():
