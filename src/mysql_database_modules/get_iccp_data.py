@@ -15,10 +15,10 @@ class get_iccp_data():
         # Attempt to open connection to dabatase
         data = []
         try:
-            db = pymysql.connect(self.MYSQL_HOST,
-                    self.MYSQL_USER,
-                    self.MYSQL_PASSWORD,
-                    self.MYSQL_DATABASE )
+            db = pymysql.connect(host=self.MYSQL_HOST,
+                    user=self.MYSQL_USER,
+                    password=self.MYSQL_PASSWORD,
+                    database=self.MYSQL_DATABASE )
             with db.cursor() as cursor:
                 sql = "SELECT * FROM historical"
                 cursor.execute(sql)
