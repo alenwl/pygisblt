@@ -9,9 +9,6 @@ class validate_user():
         self.MYSQL_HOST = os.environ.get('MYSQL_HOST')
         self.MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD')
         self.MYSQL_DATABASE = os.environ.get('MYSQL_DATABASE')
-        print(self.MYSQL_DATABASE)
-        print(self.MYSQL_PASSWORD)
-        print(self.MYSQL_HOST)
 
     def validate(self,client):
         # Attempt to open connection to dabatase
