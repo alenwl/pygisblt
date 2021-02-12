@@ -39,23 +39,31 @@ def iccptest():
 
 @application.route('/api')
 def apitest():
-    # Validate key and client_id
-    validate = validate_client()
-    if validate.check_client(request.headers.get('API-Key'),request.headers.get('client_id')):
-        # If succesfull authentication check parameter 'type'
-        if request.args.get('type') == 'iccp':
-            iccp = iccp_config_generator()
-            return Response(iccp.generate(),mimetype='text/xml')
-        elif request.args.get('type') == 'network_config':
-            nc = network_config_generator()
-            return Response(nc.generate(),mimetype='text/xml')
-        elif request.args.get('type') == 'rcc':
-            rcc = rcc_generator()
-            return Response(rcc.generate(),mimetype='text/xml')
+    try:
+        # Validate key and client_id
+        validate = validate_client()
+        if validate.check_client(request.headers.get('API-Key'),request.headers.get('client_id')):
+            # If succesfull authentication check parameter 'type'
+            if request.args.get('type') == 'iccp':
+                iccp = iccp_config_generator()
+                return Response(iccp.generate(),mimetype='text/xml')
+            elif request.args.get('type') == 'network_config':
+                nc = network_config_generator()
+                return Response(nc.generate(),mimetype='text/xml')
+            elif request.args.get('type') == 'rcc':
+                rcc = rcc_generator()
+                return Response(rcc.generate(),mimetype='text/xml')
+            else:
+                return 'Invalid type'
         else:
-            return 'Invalid type'
-    else:
-        return 'Invalid key/client_id'
-
+            return 'Invalid key/client_id'
+    except IOError as (errno, strerror):
+        print "I/O error({0}): {1}".format(errno, strerror)
+    except ValueError:
+        print "Could not convert data to an integer."
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
+        raise
+    
 if __name__ == '__main__':
     application.run()
