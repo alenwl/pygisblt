@@ -1,4 +1,4 @@
 gunicorn
 Flask
-pymysql==0.10.1
+pymysql
 pyopenssl
