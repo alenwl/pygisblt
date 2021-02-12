@@ -22,48 +22,32 @@ def dbtest():
 
 @application.route('/iccptest/')
 def iccptest():
-    try:
-        test = iccp_config_generator()
-        data = test.test()
-        if data:
-            return('Success')
-        else:
-            return('Failed starting iccp config module')
-    except IOError as (errno, strerror):
-        print "I/O error({0}): {1}".format(errno, strerror)
-    except ValueError:
-        print "Could not convert data to an integer."
-    except:
-        print "Unexpected error:", sys.exc_info()[0]
-        raise
+    test = iccp_config_generator()
+    data = test.test()
+    if data:
+        return('Success')
+    else:
+        return('Failed starting iccp config module')
 
 @application.route('/api')
 def apitest():
-    try:
-        # Validate key and client_id
-        validate = validate_client()
-        if validate.check_client(request.headers.get('API-Key'),request.headers.get('client_id')):
-            # If succesfull authentication check parameter 'type'
-            if request.args.get('type') == 'iccp':
-                iccp = iccp_config_generator()
-                return Response(iccp.generate(),mimetype='text/xml')
-            elif request.args.get('type') == 'network_config':
-                nc = network_config_generator()
-                return Response(nc.generate(),mimetype='text/xml')
-            elif request.args.get('type') == 'rcc':
-                rcc = rcc_generator()
-                return Response(rcc.generate(),mimetype='text/xml')
-            else:
-                return 'Invalid type'
+    # Validate key and client_id
+    validate = validate_client()
+    if validate.check_client(request.headers.get('API-Key'),request.headers.get('client_id')):
+        # If succesfull authentication check parameter 'type'
+        if request.args.get('type') == 'iccp':
+            iccp = iccp_config_generator()
+            return Response(iccp.generate(),mimetype='text/xml')
+        elif request.args.get('type') == 'network_config':
+            nc = network_config_generator()
+            return Response(nc.generate(),mimetype='text/xml')
+        elif request.args.get('type') == 'rcc':
+            rcc = rcc_generator()
+            return Response(rcc.generate(),mimetype='text/xml')
         else:
-            return 'Invalid key/client_id'
-    except IOError as (errno, strerror):
-        print "I/O error({0}): {1}".format(errno, strerror)
-    except ValueError:
-        print "Could not convert data to an integer."
-    except:
-        print "Unexpected error:", sys.exc_info()[0]
-        raise
-    
+            return 'Invalid type'
+    else:
+        return 'Invalid key/client_id'
+
 if __name__ == '__main__':
     application.run()
